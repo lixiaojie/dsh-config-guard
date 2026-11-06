@@ -119,5 +119,4 @@ if (existsSync(patchFile)) {
 }
 
 report('完成。下一步：重启 DSH（或让宿主热加载 profile），然后打开 设置 → 配置继承守卫。');
-report(`状态文件：${join(homedir(), '.dsh', 'config-guard.json')}`);
-report('默认 mode=report：只检查不写盘；确认清单后再点“补齐”。');
+report('只读版：不写配置、不写状态文件、不导出凭证；卡片上只有查看与刷新。');
