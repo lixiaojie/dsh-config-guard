@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/plugin.schema.json",
+  "id": "lixiaojie/dsh-config-guard",
+  "name": "dsh-config-guard",
+  "repository": "https://github.com/lixiaojie/dsh-config-guard",
+  "category": "dev",
+  "description": {
+    "en": "Read-only settings card: shows which config rows a profile overrides, what an upgrade would silently drop, asset sizes, workspace health advice, profile-invariant findings and which tools you actually use. Writes no configuration.",
+    "zh": "只读设置页插件：列出 profile 覆盖了哪些配置行、升级会静默丢掉什么、资产体积、工作区健康度建议、profile 不变量检查，以及工具的真实使用情况。不写任何配置。"
+  },
+  "added": "2026-11-06"
+}

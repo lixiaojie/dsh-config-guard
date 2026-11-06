@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>dsh-config-guard · 示例数据</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0; padding: 20px; background: #f5f6f8;
+    font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1f2329;
+  }
+  .card {
+    box-sizing: border-box; width: 980px; padding: 18px 20px; border-radius: 12px; background: #fff;
+    box-shadow: 0 1px 2px rgba(15,23,42,.06), 0 8px 24px rgba(15,23,42,.06);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .title { font-size: 14px; font-weight: 600; }
+  .badge { font-size: 11px; padding: 1px 8px; border: 1px solid #d5d9e0; border-radius: 999px; white-space: nowrap; color: #445; }
+  .badge-ok { border-color: #2e7d32; color: #2e7d32; }
+  .badge-warn { border-color: #b8860b; color: #b8860b; }
+  .meta { color: #7b8390; font-size: 11px; }
+  .hint { color: #5b6270; font-size: 12px; }
+  .button { font: inherit; font-size: 12px; padding: 3px 11px; border: 1px solid #d5d9e0; border-radius: 6px; background: #fff; color: #1f2329; }
+  .button.on { border-color: #2e7d32; color: #2e7d32; }
+  .section { border: 1px solid #e3e6ea; border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .section-head { display: flex; align-items: center; gap: 8px; }
+  .section-title { font-weight: 600; flex: 1; }
+  .bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .row { display: flex; align-items: center; gap: 10px; padding: 4px 0; border-top: 1px solid #f0f1f4; }
+  .id { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; min-width: 230px; }
+  .name { color: #8a919d; font-size: 11px; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .desc { color: #5b6270; font-size: 11.5px; flex: 2; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="head">
+    <span class="title">配置继承守卫（只读）</span>
+    <span class="badge badge-ok">只读</span>
+    <span class="meta">DSH 0.2.2-rc.1 · 最近检查 07:58:12</span>
+    <span style="flex:1"></span>
+    <span class="button">刷新</span>
+  </div>
+  <div class="hint">DSH 的 patch 层按行整块替换 config：profile 里写过 config 的行，升级新增的键不会自动生效。这里列出全部行与受影响的行。</div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">可继承配置清单</span><span class="meta">265/265 · 需补齐 3</span></div>
+    <div class="bar">
+      <span class="meta">按用途分类</span>
+      <span class="button on">全部</span>
+      <span class="button">界面与外观</span>
+      <span class="button">会话与工作区</span>
+      <span class="button">工具与效率</span>
+      <span class="button">集成与连接</span>
+      <span class="button">系统与内核</span>
+      <span class="button">自动化与任务</span>
+      <span class="button">模型与推理</span>
+      <span class="button">安全与凭证</span>
+      <span class="button">统计与用量</span>
+    </div>
+    <div class="row"><span class="id">ui-theme</span><span class="name">@deepseek-ai/dsh-client-ui-theme</span><span class="desc">补齐 1 个键</span><span class="meta">缺失 theme.density</span><span class="badge badge-warn">需补齐</span></div>
+    <div class="row"><span class="id">agent-default-model</span><span class="name">@deepseek-ai/dsh-agent-default-model</span><span class="desc">补齐 1 个键</span><span class="meta">缺失 reasoningEffort</span><span class="badge badge-warn">需补齐</span></div>
+    <div class="row"><span class="id">tool-bash</span><span class="name">@deepseek-ai/dsh-tool-bash</span><span class="desc">完全继承，无缺失键</span><span class="badge badge-ok">完全继承</span></div>
+    <div class="row"><span class="id">tool-web-search</span><span class="name">dsh-tool-web-search</span><span class="desc">第三方行，保持原值</span><span class="badge">第三方行</span></div>
+    <div class="row"><span class="id">session-store</span><span class="name">@deepseek-ai/dsh-session-store</span><span class="desc">版本钉住，跳过继承</span><span class="badge">已钉住</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">工作区健康度</span><span class="meta">79 分 · 需关注 · 0/1/2</span></div>
+    <div class="badge badge-warn" style="align-self:flex-start">需关注</div>
+    <div class="row"><span class="id">clean:packs</span><span class="desc">迁移包已积累 8 个（97MB） — 删除过期的包，只保留需要跨设备使用的那一个。</span><span class="badge">low</span></div>
+    <div class="row"><span class="id">usage:top-tool</span><span class="desc">最常用的是 bash（5395 次） — 7264 次调用、42 个活跃会话、7 个活跃日。</span><span class="badge">low</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">升级与迁移检查</span><span class="meta">0 error · 1 warn · 2 info</span></div>
+    <div class="row"><span class="id">orphan:example-plugin</span><span class="desc">孤儿配置行 — patch 里的 example-plugin 在运行时不存在</span><span class="badge badge-warn">warn</span></div>
+    <div class="row"><span class="id">abs-patch</span><span class="desc">配置里含绝对路径 — 14 处，迁移时按重映射改写</span><span class="badge">info</span></div>
+    <div class="row"><span class="id">skills-unlocked</span><span class="desc">未登记来源的技能 — 76 个技能不在 .skill-lock.json 里</span><span class="badge">info</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">profile 快照与不变量</span><span class="meta">3 · 20261106T075812000</span></div>
+    <div class="meta">dsh-auth cookie 12 / 2840 B</div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">可迁移资产</span><span class="meta">20</span></div>
+    <div class="row"><span class="id">skills.content</span><span class="desc">技能内容</span><span class="meta">82 MB</span><span class="badge badge-ok">可打包</span></div>
+    <div class="row"><span class="id">config.patch</span><span class="desc">用户配置 patch</span><span class="meta">18 KB</span><span class="badge badge-ok">可打包</span></div>
+    <div class="row"><span class="id">secrets.credentials</span><span class="desc">凭证</span><span class="meta">716 B</span><span class="badge">密钥（默认排除）</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><span class="section-title">使用情况 · 2026-10-26 ~ 2026-11-06</span><span class="meta">42 会话 · 7246 次调用</span></div>
+    <div class="bar">
+      <span class="badge">bash 5395</span><span class="badge">read 536</span><span class="badge">edit 333</span>
+      <span class="badge">write 163</span><span class="badge">browser_click 109</span><span class="badge">job_output 88</span>
+      <span class="badge">todo_write 38</span><span class="badge">web_fetch 24</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# dsh-config-guard bundle patch: one row, inert until the user opens the
+# settings page (mode: report). The plugin never edits this file itself.
+- insert:
+    - id: config-guard
+      name: dsh-config-guard
+      config:
+        enabled: true
+        mode: report
